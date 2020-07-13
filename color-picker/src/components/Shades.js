@@ -8,7 +8,7 @@ const Shades = ({ color }) => {
   useEffect(() => {
     if (isColor(color)) createShades(color);
   }, [color]);
-
+  
   const createShades = (color) => {
     const shades_color = new Values(color);
     let shades = shades_color.shades(1);
@@ -18,7 +18,7 @@ const Shades = ({ color }) => {
   return (
     <div className="shades">
       {shades.map((shade) => (
-        <Shade shade={shade} />
+        <Shade shade={shade} key={shade.weight}/>
       ))}
     </div>
   );
